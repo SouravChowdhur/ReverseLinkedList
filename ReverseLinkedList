@@ -1,0 +1,26 @@
+struct ListNode *reverseList(struct ListNode* head){
+     struct ListNode *h1, *h2, *h3;
+     if(head == NULL || head->next == NULL)
+         return head;
+     h1 = head;
+     h2 = h1->next;
+     h3 = h2->next;
+     h1->next = NULL;
+     while(h2!=NULL){
+         h2->next = h1;
+         h1 = h2;
+         h2 = h3;
+         if(h3!=NULL)
+             h3 = h3->next;
+     }
+     head = h1;
+     
+     return head;
+ 
+    
+    struct ListNode* h = head;
+    while(h!=NULL){
+        printf("%d ", h->val);
+        h = h->next;
+    }
+ }
